@@ -25,6 +25,5 @@ jobs:
 
       - name: Format check
         run: yarn prettier
-
       - name: Unit & Integration tests
         run: yarn test
