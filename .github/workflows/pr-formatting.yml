@@ -12,5 +12,5 @@ jobs:
           head-branch-regex: 'cul-\d+'
           title-template: "[%headbranch%] "
           body-template: |
-            [Task %headbranch%](https://notion.so/%headbranch%)
+            [Task V2 %headbranch%](https://notion.so/%headbranch%)
           body-update-action: "prefix"
