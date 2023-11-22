@@ -9,7 +9,7 @@ jobs:
       - uses: tzkhan/pr-update-action@v2
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          head-branch-regex: /\/([^/]+)\//
+          head-branch-regex: 'cul-\d+'
           title-template: "[%headbranch%] "
           body-template: |
             [Notion %headbranch%](https://notion.so/%headbranch%)
