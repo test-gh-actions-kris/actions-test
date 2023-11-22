@@ -1,7 +1,6 @@
 name: Check
 
 on:
-  pull_request:
   merge_group:
 
 jobs:
@@ -15,12 +14,16 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "${{ env.node_version }}"
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+      
       - name: Lint check
         run: yarn lint
+      
       - name: Format check
         run: yarn prettier
+  
       - name: Unit & Integration tests
         run: yarn test
       
