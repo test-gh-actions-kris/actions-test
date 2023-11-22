@@ -2,8 +2,7 @@ name: "Update Pull Request"
 
 on: pull_request
 
-permissions:
-  pull-requests: write
+permissions: {}
 
 jobs:
   update_pr_title:
