@@ -42,6 +42,7 @@ export function Button({ className, intent, size, underline, ...props }: ButtonP
   return (
     <a className={twMerge(button(
       { intent, size, className, underline }
+      
       ))} {...props}>
       {props.children}
     </a>
