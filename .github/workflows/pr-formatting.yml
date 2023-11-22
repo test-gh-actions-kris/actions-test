@@ -3,7 +3,7 @@ name: "Update Pull Request"
 on: pull_request
 
 jobs:
-  update_pr:
+  update_pr_title:
     runs-on: ubuntu-latest
     steps:
       - uses: tzkhan/pr-update-action@v2
