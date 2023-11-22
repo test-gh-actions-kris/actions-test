@@ -4,19 +4,24 @@ on:
   pull_request:
   merge_group:
 
+env:
+  node_version: 18
+
 jobs:
   check:
     # if: ${{ github.event_name == 'merge_group' }}
     name: Check
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - uses: "./.github/workflows/common.yml"
+      - uses: actions/checkout@v4
+      - run: '[ -f .nvmrc ] && echo "node_version=$(cat .nvmrc)" >> $GITHUB_ENV'
+      - name: "use node ${{ env.node_version  }}"
+        uses: actions/setup-node@v3
         with:
-          ref: "master"
-          path: "master"
+          node-version: "${{ env.node_version }}"
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
       - name: Lint check
         run: yarn lint
